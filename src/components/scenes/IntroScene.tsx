@@ -40,10 +40,10 @@ const IntroScene = () => {
       {/* Cinematic vignette */}
       <div className="absolute inset-0 cinema-vignette z-10" />
 
-      {/* Content */}
-      <div className="relative z-30 text-center">
+      {/* Content - pushed to bottom half */}
+      <div className="relative z-30 text-center flex flex-col items-center justify-end h-full pb-[8vh]">
         <motion.p
-          className="text-muted-foreground text-sm tracking-[0.5em] uppercase mb-6 font-body"
+          className="text-muted-foreground text-sm tracking-[0.5em] uppercase mb-4 font-body"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 2.2 }}
@@ -52,7 +52,7 @@ const IntroScene = () => {
         </motion.p>
 
         <motion.h1
-          className="font-cinematic text-7xl md:text-9xl lg:text-[12rem] text-gold glow-gold leading-none"
+          className="font-cinematic text-7xl md:text-9xl lg:text-[10rem] text-gold glow-gold leading-none"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -70,7 +70,7 @@ const IntroScene = () => {
         </motion.h2>
 
         <motion.div
-          className="mt-8 flex items-center justify-center gap-4"
+          className="mt-6 flex items-center justify-center gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
@@ -83,7 +83,7 @@ const IntroScene = () => {
         </motion.div>
 
         <motion.div
-          className="mt-16"
+          className="mt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           transition={{ duration: 1, delay: 3.5, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}

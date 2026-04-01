@@ -1,28 +1,8 @@
 import { motion } from "framer-motion";
-import nileshPhoto from "@/assets/nilesh-photo.png";
 
 const ContactSceneNew = () => {
   return (
     <section className="relative h-full w-full overflow-hidden cinema-gradient flex items-center justify-center">
-      {/* Photo background */}
-      <motion.div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{ opacity: 0.08, scale: 1 }}
-        transition={{ duration: 1.5 }}
-      >
-        <img
-          src={nileshPhoto}
-          alt=""
-          className="h-full w-auto object-cover"
-          style={{ filter: "grayscale(100%) contrast(1.3)" }}
-        />
-      </motion.div>
-
-      {/* Letterbox bars */}
-      <div className="absolute top-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
-      <div className="absolute bottom-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
-
       {/* Radial glow */}
       <div
         className="absolute inset-0"
