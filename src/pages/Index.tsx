@@ -1,8 +1,11 @@
-import CinematicIntro from "@/components/CinematicIntro";
-import ExperienceScene from "@/components/ExperienceScene";
-import EducationScene from "@/components/EducationScene";
-import SkillsScene from "@/components/SkillsScene";
-import ContactScene from "@/components/ContactScene";
+import { useSceneManager } from "@/hooks/useSceneManager";
+import SceneTransition from "@/components/SceneTransition";
+import SceneNavigator from "@/components/SceneNavigator";
+import IntroScene from "@/components/scenes/IntroScene";
+import ExperienceSceneNew from "@/components/scenes/ExperienceSceneNew";
+import SkillsSceneNew from "@/components/scenes/SkillsSceneNew";
+import EducationSceneNew from "@/components/scenes/EducationSceneNew";
+import ContactSceneNew from "@/components/scenes/ContactSceneNew";
 
 import cdacLogo from "@/assets/cdac-logo.png";
 import lgLogo from "@/assets/lg-logo.png";
@@ -76,19 +79,61 @@ const experiences = [
   },
 ];
 
+type TransitionType = "zoom-out" | "dissolve" | "warp" | "slide-up" | "rotate" | "galaxy" | "cinematic-fade";
+
+const sceneTransitions: TransitionType[] = [
+  "cinematic-fade", // Intro
+  "zoom-out",       // CDAC
+  "warp",           // LG
+  "galaxy",         // GE
+  "rotate",         // Skills
+  "slide-up",       // Education
+  "dissolve",       // Contact
+];
+
+const sceneLabels = ["Intro", "CDAC", "LG Soft", "GE Health", "Skills", "Education", "Contact"];
+
 const Index = () => {
+  const totalScenes = 7;
+  const { currentScene, direction, goTo } = useSceneManager(totalScenes);
+
+  const renderScene = () => {
+    switch (currentScene) {
+      case 0:
+        return <IntroScene />;
+      case 1:
+        return <ExperienceSceneNew {...experiences[0]} index={0} />;
+      case 2:
+        return <ExperienceSceneNew {...experiences[1]} index={1} />;
+      case 3:
+        return <ExperienceSceneNew {...experiences[2]} index={2} />;
+      case 4:
+        return <SkillsSceneNew />;
+      case 5:
+        return <EducationSceneNew />;
+      case 6:
+        return <ContactSceneNew />;
+      default:
+        return <IntroScene />;
+    }
+  };
+
   return (
-    <main className="bg-background">
-      <CinematicIntro />
+    <main className="bg-background h-screen w-screen overflow-hidden relative">
+      <SceneTransition
+        sceneKey={`scene-${currentScene}`}
+        direction={direction}
+        transition={sceneTransitions[currentScene]}
+      >
+        {renderScene()}
+      </SceneTransition>
 
-      {/* Experience Journey */}
-      {experiences.map((exp, idx) => (
-        <ExperienceScene key={exp.company} {...exp} index={idx} />
-      ))}
-
-      <SkillsScene />
-      <EducationScene />
-      <ContactScene />
+      <SceneNavigator
+        totalScenes={totalScenes}
+        currentScene={currentScene}
+        onNavigate={goTo}
+        labels={sceneLabels}
+      />
     </main>
   );
 };
