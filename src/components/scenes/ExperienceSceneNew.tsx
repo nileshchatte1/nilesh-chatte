@@ -36,9 +36,6 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
         transition={{ duration: 1.5, delay: 0.5 }}
       />
 
-      {/* Letterbox bars */}
-      <div className="absolute top-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
-      <div className="absolute bottom-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
 
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         {/* Chapter number */}
