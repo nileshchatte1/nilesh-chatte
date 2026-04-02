@@ -43,12 +43,6 @@ const ContactSceneNew = () => {
             nileshchatte1@gmail.com
           </a>
           <a
-            href="tel:+917387818554"
-            className="block font-body text-foreground/70 hover:text-gold transition-colors duration-300 text-sm tracking-wider"
-          >
-            +91 7387818554
-          </a>
-          <a
             href="https://linkedin.com/in/nilesh-chatte/"
             target="_blank"
             rel="noopener noreferrer"

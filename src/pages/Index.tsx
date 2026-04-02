@@ -82,13 +82,13 @@ const experiences = [
 type TransitionType = "zoom-out" | "dissolve" | "warp" | "slide-up" | "rotate" | "galaxy" | "cinematic-fade";
 
 const sceneTransitions: TransitionType[] = [
-  "cinematic-fade", // Intro
-  "zoom-out",       // CDAC
-  "warp",           // LG
-  "galaxy",         // GE
-  "rotate",         // Skills
-  "slide-up",       // Education
-  "dissolve",       // Contact
+  "cinematic-fade",
+  "cinematic-fade",
+  "cinematic-fade",
+  "cinematic-fade",
+  "cinematic-fade",
+  "cinematic-fade",
+  "cinematic-fade",
 ];
 
 const sceneLabels = ["Intro", "GE Health", "LG Soft", "CDAC", "Skills", "Education", "Contact"];
