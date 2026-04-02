@@ -17,7 +17,7 @@ const experiences = [
     company: "CDAC ACTS",
     role: "PG Diploma Student",
     period: "2021",
-    skills: "Advanced Computing • 'A' Grade • Rank 552",
+    skills: "Advanced Computing • 'A' Grade • AIR 552",
     projects: [
       {
         name: "Advanced Computing Program",

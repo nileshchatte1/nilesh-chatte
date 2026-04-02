@@ -89,7 +89,7 @@ const EducationSceneNew = () => {
               whileHover={{ borderColor: "hsl(43 80% 55% / 0.3)", scale: 1.02 }}
             >
               <p className="text-foreground/80 text-sm font-body leading-relaxed">
-                <span className="text-gold">★</span> Cleared LG's Level 3 LSET exam — Advanced technical expertise
+                <span className="text-gold">★</span> Cleared LG's Level 3 LSET exam, demonstrating advanced technical expertise
               </p>
             </motion.div>
           </div>
