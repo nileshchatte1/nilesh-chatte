@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const skillCategories = [
   { label: "Languages", items: ["C++", "C", "Java", "Python"], icon: "⟨/⟩" },
   { label: "Paradigms", items: ["Data Structures", "Algorithms", "OOP", "SOLID", "STL"], icon: "◆" },
-  { label: "Frameworks", items: ["GStreamer", "MPEG-DASH"], icon: "⚙" },
-  { label: "Tools", items: ["Docker", "Git", "GitHub", "Gerrit", "VS Code", "Jira", "CMake", "Meson"], icon: "⚡" },
+  { label: "FRAMEWORKS/TECHNOLOGIES", items: ["GStreamer", "MPEG-DASH"], icon: "⚙" },
+  { label: "Tools", items: ["Docker", "Git", "GitLab", "Gerrit", "VS Code", "Jira", "CMake", "Meson"], icon: "⚡" },
   { label: "OS", items: ["Linux", "WebOS", "Windows"], icon: "▣" },
 ];
 
