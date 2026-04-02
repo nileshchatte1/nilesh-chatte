@@ -91,7 +91,7 @@ const sceneTransitions: TransitionType[] = [
   "cinematic-fade",
 ];
 
-const sceneLabels = ["Intro", "GE Health", "LG Soft", "CDAC", "Skills", "Education", "Contact"];
+const sceneLabels = ["Intro", "Skills", "GE Health", "LG Soft", "CDAC", "Education", "Contact"];
 
 const Index = () => {
   const totalScenes = 7;
@@ -102,13 +102,13 @@ const Index = () => {
       case 0:
         return <IntroScene />;
       case 1:
-        return <ExperienceSceneNew {...experiences[2]} index={0} />;
-      case 2:
-        return <ExperienceSceneNew {...experiences[1]} index={1} />;
-      case 3:
-        return <ExperienceSceneNew {...experiences[0]} index={2} />;
-      case 4:
         return <SkillsSceneNew />;
+      case 2:
+        return <ExperienceSceneNew {...experiences[2]} index={0} />;
+      case 3:
+        return <ExperienceSceneNew {...experiences[1]} index={1} />;
+      case 4:
+        return <ExperienceSceneNew {...experiences[0]} index={2} />;
       case 5:
         return <EducationSceneNew />;
       case 6:
