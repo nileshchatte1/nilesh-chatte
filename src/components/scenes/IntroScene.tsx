@@ -7,7 +7,7 @@ const IntroScene = () => {
       {/* Animated photo background */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
-        initial={{ scale: 1.3, opacity: 0 }}
+        initial={{ scale: 1.05, opacity: 0.25 }}
         animate={{ scale: 1, opacity: 0.25 }}
         transition={{ duration: 3, ease: "easeOut" }}
       >
