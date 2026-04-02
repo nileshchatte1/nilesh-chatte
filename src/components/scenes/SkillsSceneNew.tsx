@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   { label: "Languages", items: ["C++", "C", "Java", "Python"], icon: "⟨/⟩" },
-  { label: "Paradigms", items: ["Data Structures", "Algorithms", "OOP", "SOLID", "STL"], icon: "◆" },
+  { label: "Paradigms", items: ["Data Structures", "Algorithms", "OOP", "SOLID", "STL", "Design Patterns"], icon: "◆" },
   { label: "FRAMEWORKS/TECHNOLOGIES", items: ["GStreamer", "MPEG-DASH"], icon: "⚙" },
-  { label: "Tools", items: ["Docker", "Git", "GitLab", "Gerrit", "VS Code", "Jira", "CMake", "Meson"], icon: "⚡" },
-  { label: "OS", items: ["Linux", "WebOS", "Windows"], icon: "▣" },
+  { label: "Tools", items: ["Docker", "Git", "GitLab", "Gerrit", "VS Code", "Jira", "Source Insight", "ClearCase", "Copilot", "GenAI", "Glogg"], icon: "⚡" },
+  { label: "Build System", items: ["CMake", "Meson", "Ninja"], icon: "⛭" },
+  { label: "OS", items: ["Linux", "WebOS", "Windows", "SLES15"], icon: "▣" },
 ];
 
 const SkillsSceneNew = () => {
