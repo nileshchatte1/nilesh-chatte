@@ -61,7 +61,7 @@ const SkillsSceneNew = () => {
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.label}
-              className="bg-secondary/30 border border-gold/10 p-5 backdrop-blur-sm relative group"
+              className="bg-secondary/30 border border-gold/10 p-4 lg:p-5 backdrop-blur-sm relative group"
               initial={{ opacity: 0, y: 40, rotateX: 15 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + catIdx * 0.12 }}
