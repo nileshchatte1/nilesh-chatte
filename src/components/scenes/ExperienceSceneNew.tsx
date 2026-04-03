@@ -14,7 +14,7 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
   const isEven = index % 2 === 0;
 
   return (
-    <section className="relative h-full w-full overflow-hidden cinema-gradient flex items-center">
+    <section className="relative h-full w-full overflow-y-auto overflow-x-hidden cinema-gradient flex items-start md:items-center py-20 md:py-0" data-scroll-container>
       {/* Large background logo */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center pointer-events-none"

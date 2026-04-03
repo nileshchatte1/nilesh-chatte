@@ -26,6 +26,13 @@ export const useSceneManager = (totalScenes: number) => {
   const next = useCallback(() => goTo(currentScene + 1), [currentScene, goTo]);
   const prev = useCallback(() => goTo(currentScene - 1), [currentScene, goTo]);
 
+  const isScrollableElement = useCallback((el: HTMLElement) => {
+    const { overflowY } = window.getComputedStyle(el);
+    const allowsScroll = ["auto", "scroll", "overlay"].includes(overflowY) || el.hasAttribute("data-scroll-container");
+
+    return allowsScroll && el.scrollHeight > el.clientHeight;
+  }, []);
+
   const getScrollableElement = useCallback((): HTMLElement | null => {
     // Find the scrollable content area within the current scene
     const sceneEl = document.querySelector(".fixed.inset-0 section, .fixed.inset-0 > div > section");
@@ -35,15 +42,15 @@ export const useSceneManager = (totalScenes: number) => {
     const scrollContainers = sceneEl.querySelectorAll("[data-scroll-container], .overflow-y-auto, .overflow-auto");
     for (const el of scrollContainers) {
       const htmlEl = el as HTMLElement;
-      if (htmlEl.scrollHeight > htmlEl.clientHeight) return htmlEl;
+      if (isScrollableElement(htmlEl)) return htmlEl;
     }
     
     // Check if the section itself is scrollable
     const sectionEl = sceneEl as HTMLElement;
-    if (sectionEl.scrollHeight > sectionEl.clientHeight) return sectionEl;
+    if (isScrollableElement(sectionEl)) return sectionEl;
     
     return null;
-  }, []);
+  }, [isScrollableElement]);
 
   const isAtScrollBoundary = useCallback((scrollDir: "down" | "up"): boolean => {
     const el = getScrollableElement();
