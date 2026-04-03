@@ -68,7 +68,7 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
               <div>
-                <h2 className="font-cinematic text-4xl md:text-6xl text-gold glow-gold-subtle">
+                <h2 className="font-cinematic text-3xl md:text-4xl lg:text-6xl text-gold glow-gold-subtle">
                   {company}
                 </h2>
               </div>
