@@ -69,7 +69,7 @@ const EducationSceneNew = () => {
 
         {/* Achievements */}
         <motion.div
-          className="max-w-3xl mx-auto mt-14"
+          className="max-w-3xl mx-auto mt-8 lg:mt-14"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}

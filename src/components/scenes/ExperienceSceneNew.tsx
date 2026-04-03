@@ -50,7 +50,7 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
           </span>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-12 items-start">
           {/* Company info */}
           <div>
             <motion.div

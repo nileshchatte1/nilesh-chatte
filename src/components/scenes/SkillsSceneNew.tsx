@@ -48,7 +48,7 @@ const SkillsSceneNew = () => {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-[4vh] pb-[6vh]">
         <motion.div
-          className="mb-12 text-center"
+          className="mb-6 lg:mb-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
