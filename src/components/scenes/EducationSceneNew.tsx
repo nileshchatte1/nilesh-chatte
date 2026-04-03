@@ -26,7 +26,7 @@ const EducationSceneNew = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-4 font-body">The Origin Story</p>
-          <h2 className="font-cinematic text-6xl md:text-8xl text-gold glow-gold">EDUCATION</h2>
+          <h2 className="font-cinematic text-5xl md:text-6xl lg:text-8xl text-gold glow-gold">EDUCATION</h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-10">
