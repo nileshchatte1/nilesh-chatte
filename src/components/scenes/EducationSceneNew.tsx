@@ -3,7 +3,7 @@ import cdacLogo from "@/assets/cdac-logo.png";
 
 const EducationSceneNew = () => {
   return (
-    <section className="relative h-full w-full overflow-hidden cinema-gradient flex items-center">
+    <section className="relative h-full w-full overflow-y-auto overflow-x-hidden cinema-gradient flex items-start md:items-center py-16 md:py-0" data-scroll-container>
       {/* Background logo */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -26,7 +26,7 @@ const EducationSceneNew = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-4 font-body">The Origin Story</p>
-          <h2 className="font-cinematic text-6xl md:text-8xl text-gold glow-gold">EDUCATION</h2>
+          <h2 className="font-cinematic text-5xl md:text-6xl lg:text-8xl text-gold glow-gold">EDUCATION</h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-10">
@@ -43,7 +43,7 @@ const EducationSceneNew = () => {
               transition={{ duration: 0.4, delay: 0.5, type: "spring" }}
             />
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase font-body mb-2">Sept 2021</p>
-            <h3 className="font-cinematic text-3xl md:text-4xl text-foreground">CDAC ACTS PUNE</h3>
+            <h3 className="font-cinematic text-2xl md:text-3xl lg:text-4xl text-foreground">CDAC ACTS PUNE</h3>
             <p className="font-elegant text-sm text-gold-dim tracking-wider mt-1">PG Diploma in Advanced Computing</p>
             <p className="text-foreground/60 text-sm mt-2 font-body">Graduated with 'A' grade • Rank 552 in CCAT Exam</p>
           </motion.div>
@@ -61,7 +61,7 @@ const EducationSceneNew = () => {
               transition={{ duration: 0.4, delay: 0.8, type: "spring" }}
             />
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase font-body mb-2">Sept 2020</p>
-            <h3 className="font-cinematic text-3xl md:text-4xl text-foreground">UNIVERSITY OF PUNE</h3>
+            <h3 className="font-cinematic text-2xl md:text-3xl lg:text-4xl text-foreground">UNIVERSITY OF PUNE</h3>
             <p className="font-elegant text-sm text-gold-dim tracking-wider mt-1">Bachelor of Engineering</p>
             <p className="text-foreground/60 text-sm mt-2 font-body">Graduated with 'Distinction'</p>
           </motion.div>
@@ -69,13 +69,13 @@ const EducationSceneNew = () => {
 
         {/* Achievements */}
         <motion.div
-          className="max-w-3xl mx-auto mt-14"
+          className="max-w-3xl mx-auto mt-8 lg:mt-14"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-6 font-body text-center">Achievements</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-4 lg:mb-6 font-body text-center">Achievements</p>
+          <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
             <motion.div
               className="bg-secondary/30 border border-gold/10 p-5"
               whileHover={{ borderColor: "hsl(43 80% 55% / 0.3)", scale: 1.02 }}

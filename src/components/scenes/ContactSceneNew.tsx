@@ -22,7 +22,7 @@ const ContactSceneNew = () => {
         </motion.p>
 
         <motion.h2
-          className="font-cinematic text-6xl md:text-8xl lg:text-9xl text-gold glow-gold"
+          className="font-cinematic text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-gold glow-gold"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4 }}

@@ -48,20 +48,20 @@ const SkillsSceneNew = () => {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-[4vh] pb-[6vh]">
         <motion.div
-          className="mb-12 text-center"
+          className="mb-6 lg:mb-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-4 font-body">Arsenal</p>
-          <h2 className="font-cinematic text-6xl md:text-8xl text-gold glow-gold">SKILLS</h2>
+          <h2 className="font-cinematic text-5xl md:text-6xl lg:text-8xl text-gold glow-gold">SKILLS</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto">
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.label}
-              className="bg-secondary/30 border border-gold/10 p-5 backdrop-blur-sm relative group"
+              className="bg-secondary/30 border border-gold/10 p-4 lg:p-5 backdrop-blur-sm relative group"
               initial={{ opacity: 0, y: 40, rotateX: 15 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + catIdx * 0.12 }}

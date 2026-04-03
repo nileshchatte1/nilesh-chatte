@@ -45,12 +45,12 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="font-cinematic text-8xl md:text-9xl text-primary/10">
+          <span className="font-cinematic text-6xl md:text-7xl lg:text-9xl text-primary/10">
             {String(index + 1).padStart(2, '0')}
           </span>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-12 items-start">
           {/* Company info */}
           <div>
             <motion.div
@@ -68,7 +68,7 @@ const ExperienceSceneNew = ({ logo, company, role, period, skills, projects, ind
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
               <div>
-                <h2 className="font-cinematic text-4xl md:text-6xl text-gold glow-gold-subtle">
+                <h2 className="font-cinematic text-3xl md:text-4xl lg:text-6xl text-gold glow-gold-subtle">
                   {company}
                 </h2>
               </div>
