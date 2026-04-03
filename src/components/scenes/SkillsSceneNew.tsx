@@ -54,7 +54,7 @@ const SkillsSceneNew = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-muted-foreground text-xs tracking-[0.5em] uppercase mb-4 font-body">Arsenal</p>
-          <h2 className="font-cinematic text-6xl md:text-8xl text-gold glow-gold">SKILLS</h2>
+          <h2 className="font-cinematic text-5xl md:text-6xl lg:text-8xl text-gold glow-gold">SKILLS</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
