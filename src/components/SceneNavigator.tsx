@@ -9,15 +9,15 @@ interface SceneNavigatorProps {
 
 const SceneNavigator = ({ totalScenes, currentScene, onNavigate, labels }: SceneNavigatorProps) => {
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end gap-3">
+    <div className="pointer-events-none fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full bg-background/55 px-3 py-2 backdrop-blur-md md:bottom-auto md:left-auto md:right-6 md:top-1/2 md:flex-col md:items-end md:gap-3 md:rounded-none md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none md:-translate-y-1/2 md:translate-x-0">
       {Array.from({ length: totalScenes }).map((_, i) => (
         <button
           key={i}
           onClick={() => onNavigate(i)}
-          className="group flex items-center gap-3 cursor-pointer"
+          className="pointer-events-auto group flex items-center gap-3 cursor-pointer"
         >
           <motion.span
-            className="text-xs font-body tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-gold-dim"
+            className="hidden text-xs font-body tracking-wider uppercase opacity-0 transition-opacity duration-300 text-gold-dim group-hover:opacity-100 md:block"
             initial={false}
           >
             {labels[i]}

@@ -5,6 +5,7 @@ export const useSceneManager = (totalScenes: number) => {
   const [direction, setDirection] = useState(0);
   const isTransitioning = useRef(false);
   const touchStartY = useRef(0);
+  const touchTriggered = useRef(false);
   const atBoundaryCount = useRef(0);
 
   const goTo = useCallback(
@@ -94,9 +95,32 @@ export const useSceneManager = (totalScenes: number) => {
 
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY;
+      touchTriggered.current = false;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (touchTriggered.current) return;
+
+      const diff = touchStartY.current - e.touches[0].clientY;
+      if (Math.abs(diff) < 60) return;
+
+      const scrollDir = diff > 0 ? "down" : "up";
+      if (!isAtScrollBoundary(scrollDir)) return;
+
+      e.preventDefault();
+      touchTriggered.current = true;
+      atBoundaryCount.current = 0;
+
+      if (diff > 0) next();
+      else prev();
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
+      if (touchTriggered.current) {
+        touchTriggered.current = false;
+        return;
+      }
+
       const diff = touchStartY.current - e.changedTouches[0].clientY;
       if (Math.abs(diff) < 50) return;
       
@@ -105,6 +129,8 @@ export const useSceneManager = (totalScenes: number) => {
       
       if (diff > 0) next();
       else prev();
+
+      touchTriggered.current = false;
     };
 
     // Reset boundary count when user scrolls within content
@@ -115,6 +141,7 @@ export const useSceneManager = (totalScenes: number) => {
     window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
     window.addEventListener("touchend", handleTouchEnd);
     window.addEventListener("scroll", handleScroll, true);
 
@@ -122,6 +149,7 @@ export const useSceneManager = (totalScenes: number) => {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("scroll", handleScroll, true);
     };
