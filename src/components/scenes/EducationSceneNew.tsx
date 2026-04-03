@@ -14,10 +14,6 @@ const EducationSceneNew = () => {
         <img src={cdacLogo} alt="" className="w-[500px] h-[500px] object-contain" />
       </motion.div>
 
-      {/* Letterbox bars */}
-      <div className="absolute top-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
-      <div className="absolute bottom-0 left-0 right-0 h-[3vh] letterbox-bar z-20" />
-
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         <motion.div
           className="mb-12 text-center"
